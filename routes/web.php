@@ -14,11 +14,11 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified', 'rolemanager:customer'])->name('dashboard');
 
 Route::get('/admin/dashboard', function () {
-    return view('dashboard');
+    return view('admin');
 })->middleware(['auth', 'verified', 'rolemanager:admin'])->name('admin.dashboard');
 
 Route::get('/vendor/dashboard', function () {
-    return view('dashboard');
+    return view('vendor');
 })->middleware(['auth', 'verified', 'rolemanager:vendor'])->name('vendor.dashboard');
 
 Route::middleware('auth')->group(function () {
