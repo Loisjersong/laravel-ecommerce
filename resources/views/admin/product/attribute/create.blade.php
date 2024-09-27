@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
 
 @section("content")
-    <h1>Dashboard</h1>
+    <h1>Create Attribute</h1>
 @endsection

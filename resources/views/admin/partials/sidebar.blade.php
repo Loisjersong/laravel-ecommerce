@@ -63,12 +63,12 @@ class="absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hid
                             <ul class="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="#"
+                                        href="{{ route('category.create') }}"
                                         :class="page === 'createCategory' && '!text-white'">Create Category</a>
                                 </li>
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="#" :class="page === 'manageCategory' && '!text-white'">Manage Category</a>
+                                        href="{{ route('category.index')}}" :class="page === 'manageCategory' && '!text-white'">Manage Category</a>
                                 </li>
                             </ul>
                         </div>
@@ -101,12 +101,12 @@ class="absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hid
                             <ul class="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="#"
+                                        href="{{ route('subcategory.create') }}"
                                         :class="page === 'createSubCategory' && '!text-white'">Create Sub Category</a>
                                 </li>
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="#" :class="page === 'manageSubCategory' && '!text-white'">Manage Sub Category</a>
+                                        href="{{ route('subcategory.index') }}" :class="page === 'manageSubCategory' && '!text-white'">Manage Sub Category</a>
                                 </li>
                             </ul>
                         </div>
@@ -139,12 +139,12 @@ class="absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hid
                             <ul class="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="#"
+                                        href="{{ route('attribute.create') }}"
                                         :class="page === 'createAttribute' && '!text-white'">Create Attribute</a>
                                 </li>
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="#" :class="page === 'manageAttribute' && '!text-white'">Manage Attribute</a>
+                                        href="{{ route('attribute.index') }}" :class="page === 'manageAttribute' && '!text-white'">Manage Attribute</a>
                                 </li>
                             </ul>
                         </div>
@@ -177,12 +177,12 @@ class="absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hid
                             <ul class="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="#"
+                                        href="{{ route('discount.create') }}"
                                         :class="page === 'createDiscount' && '!text-white'">Create Discount</a>
                                 </li>
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="#" :class="page === 'manageDiscount' && '!text-white'">Manage Discount</a>
+                                        href="{{ route('discount.index') }}" :class="page === 'manageDiscount' && '!text-white'">Manage Discount</a>
                                 </li>
                             </ul>
                         </div>
@@ -215,12 +215,12 @@ class="absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hid
                             <ul class="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="#"
-                                        :class="page === 'createProduct' && '!text-white'">Manage Product</a>
+                                        href="{{ route('product.index') }}"
+                                        :class="page === 'manageProduct' && '!text-white'">Manage Product</a>
                                 </li>
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="#" :class="page === 'manageProduct' && '!text-white'">Manage Review</a>
+                                        href="{{ route('reviews.index')}}" :class="page === 'manageReview' && '!text-white'">Manage Review</a>
                                 </li>
                             </ul>
                         </div>
@@ -238,7 +238,7 @@ class="absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hid
                     <!-- Menu Item Cart -->
                     <li>
                         <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="#" @click="selected = (selected === 'Cart' ? '':'Cart')"
+                            href="{{ route('cart.index') }}" @click="selected = (selected === 'Cart' ? '':'Cart')"
                             :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Cart') && (page === 'cart') }">
                             <svg xmlns="http://www.w3.org/2000/svg" class="fill-current" fill="none" width="24" height="24" viewBox="0 0 24 24"><path d="M21.822 7.431A1 1 0 0 0 21 7H7.333L6.179 4.23A1.994 1.994 0 0 0 4.333 3H2v2h2.333l4.744 11.385A1 1 0 0 0 10 17h8c.417 0 .79-.259.937-.648l3-8a1 1 0 0 0-.115-.921zM17.307 15h-6.64l-2.5-6h11.39l-2.25 6z"></path><circle cx="10.5" cy="19.5" r="1.5"></circle><circle cx="17.5" cy="19.5" r="1.5"></circle></svg>
 
@@ -250,7 +250,7 @@ class="absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hid
                     <!-- Menu Item Order -->
                     <li>
                         <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="#" @click="selected = (selected === 'Order' ? '':'Order')"
+                            href="{{ route('order.index') }}" @click="selected = (selected === 'Order' ? '':'Order')"
                             :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Order') && (page === 'order') }">
                             <svg xmlns="http://www.w3.org/2000/svg" class="fill-current" fill="none" width="24" height="24" viewBox="0 0 24 24"><path d="M21 11h-3V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v14c0 1.654 1.346 3 3 3h14c1.654 0 3-1.346 3-3v-6a1 1 0 0 0-1-1zM5 19a1 1 0 0 1-1-1V5h12v13c0 .351.061.688.171 1H5zm15-1a1 1 0 0 1-2 0v-5h2v5z"></path><path d="M6 7h8v2H6zm0 4h8v2H6zm5 4h3v2h-3z"></path></svg>
 
@@ -262,7 +262,7 @@ class="absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hid
                     <!-- Menu Item Settings -->
                     <li>
                         <a class="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="#" @click="selected = (selected === 'Settings' ? '':'Settings')"
+                            href="/admin/settings" @click="selected = (selected === 'Settings' ? '':'Settings')"
                             :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Settings') && (page === 'settings') }"
                             :class="page === 'settings' && 'bg-graydark'">
                             <svg xmlns="http://www.w3.org/2000/svg" class="fill-current" fill="none" width="24" height="24" viewBox="0 0 24 24"><path d="M12 16c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm0-6c1.084 0 2 .916 2 2s-.916 2-2 2-2-.916-2-2 .916-2 2-2z"></path><path d="m2.845 16.136 1 1.73c.531.917 1.809 1.261 2.73.73l.529-.306A8.1 8.1 0 0 0 9 19.402V20c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2v-.598a8.132 8.132 0 0 0 1.896-1.111l.529.306c.923.53 2.198.188 2.731-.731l.999-1.729a2.001 2.001 0 0 0-.731-2.732l-.505-.292a7.718 7.718 0 0 0 0-2.224l.505-.292a2.002 2.002 0 0 0 .731-2.732l-.999-1.729c-.531-.92-1.808-1.265-2.731-.732l-.529.306A8.1 8.1 0 0 0 15 4.598V4c0-1.103-.897-2-2-2h-2c-1.103 0-2 .897-2 2v.598a8.132 8.132 0 0 0-1.896 1.111l-.529-.306c-.924-.531-2.2-.187-2.731.732l-.999 1.729a2.001 2.001 0 0 0 .731 2.732l.505.292a7.683 7.683 0 0 0 0 2.223l-.505.292a2.003 2.003 0 0 0-.731 2.733zm3.326-2.758A5.703 5.703 0 0 1 6 12c0-.462.058-.926.17-1.378a.999.999 0 0 0-.47-1.108l-1.123-.65.998-1.729 1.145.662a.997.997 0 0 0 1.188-.142 6.071 6.071 0 0 1 2.384-1.399A1 1 0 0 0 11 5.3V4h2v1.3a1 1 0 0 0 .708.956 6.083 6.083 0 0 1 2.384 1.399.999.999 0 0 0 1.188.142l1.144-.661 1 1.729-1.124.649a1 1 0 0 0-.47 1.108c.112.452.17.916.17 1.378 0 .461-.058.925-.171 1.378a1 1 0 0 0 .471 1.108l1.123.649-.998 1.729-1.145-.661a.996.996 0 0 0-1.188.142 6.071 6.071 0 0 1-2.384 1.399A1 1 0 0 0 13 18.7l.002 1.3H11v-1.3a1 1 0 0 0-.708-.956 6.083 6.083 0 0 1-2.384-1.399.992.992 0 0 0-1.188-.141l-1.144.662-1-1.729 1.124-.651a1 1 0 0 0 .471-1.108z"></path></svg>
