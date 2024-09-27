@@ -2,8 +2,12 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Middleware\RoleManager;
+use App\Http\Controllers\Admin\AdminMainController;
 
+
+Route::get('/test', function () {
+    return view('test');
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -13,9 +17,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified', 'rolemanager:customer'])->name('dashboard');
 
-Route::get('/admin/dashboard', function () {
-    return view('admin');
-})->middleware(['auth', 'verified', 'rolemanager:admin'])->name('admin.dashboard');
+Route::middleware(['auth', 'verified', 'rolemanager:admin'])->group(function () {
+    Route::controller(AdminMainController::class)->group(function () {
+        Route::get('/admin/dashboard', [AdminMainController::class, 'index'])->name('admin.dashboard');
+    });
+});
 
 Route::get('/vendor/dashboard', function () {
     return view('vendor');
@@ -26,5 +32,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 
 require __DIR__.'/auth.php';

@@ -11,6 +11,8 @@
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
                 </div>
+
+                <x-danger-button>test</x-danger-button>
             </div>
         </div>
     </div>
