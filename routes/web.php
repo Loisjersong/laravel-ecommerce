@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminMainController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\DiscountController;
+use App\Http\Controllers\ProductDiscountController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\ProductAttributeController;
 use App\Http\Controllers\ProductController;
@@ -46,7 +46,7 @@ Route::middleware(['auth', 'verified', 'rolemanager:admin'])->group(function () 
             Route::get('/productattribute/create', 'create')->name('attribute.create');
         });
 
-        Route::controller(DiscountController::class)->group(function () {
+        Route::controller(ProductDiscountController::class)->group(function () {
             Route::get('/discount/index', 'index')->name('discount.index');
             Route::get('/discount/create', 'create')->name('discount.create');
         });
