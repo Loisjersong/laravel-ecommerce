@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
 
-@section("content")
+@section('content')
     <h1>Create Payment</h1>
 @endsection

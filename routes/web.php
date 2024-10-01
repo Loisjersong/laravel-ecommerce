@@ -24,6 +24,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified', 'rolemanager:customer'])->name('dashboard');
 
+
+// Admin Routes
 Route::middleware(['auth', 'verified', 'rolemanager:admin'])->group(function () {
     Route::prefix('admin')->group(function () {
         Route::controller(AdminMainController::class)->group(function () {
@@ -34,6 +36,10 @@ Route::middleware(['auth', 'verified', 'rolemanager:admin'])->group(function () 
         Route::controller(CategoryController::class)->group(function () {
             Route::get('/category/index', 'index')->name('category.index');
             Route::get('/category/create', 'create')->name('category.create');
+            Route::post('/category/store', 'store')->name('category.store');
+            Route::put('/category/update/{category}', 'update')->name('category.update');
+            Route::get('/category/edit/{category}', 'edit')->name('category.edit');
+            Route::delete('/category/destroy/{category}', 'destroy')->name('category.destroy');
         });
 
         Route::controller(SubCategoryController::class)->group(function () {

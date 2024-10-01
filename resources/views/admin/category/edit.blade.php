@@ -7,20 +7,20 @@
 
             <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
                 <h3 class="font-medium text-black dark:text-white">
-                    Add Category
+                    Edit Category
                 </h3>
             </div>
 
-            <form action="{{ route('category.store') }}" method="POST">
+            <form action="{{ route('category.update', $category->id) }}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="p-6.5">
                     <div class="mb-4.5">
                         <x-form-label> Category Name </x-form-label>
-                        <x-form-input type="text" name="category_name" required/>
+                        <x-form-input type="text" name="category_name" value="{{ $category->category_name }}" required/>
                     </div>
 
-                    <x-button> Submit </x-button>
-
+                    <x-button> Update </x-button>
                 </div>
             </form>
 
