@@ -17,6 +17,7 @@
                     <div class="mb-4.5">
                         <x-form-label> Category Name </x-form-label>
                         <x-form-input type="text" name="category_name" required/>
+                        <x-input-error :messages="$errors->get('category_name')" ></x-input-error>
                     </div>
 
                     <x-button> Submit </x-button>

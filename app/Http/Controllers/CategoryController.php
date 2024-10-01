@@ -21,7 +21,7 @@ class CategoryController extends Controller
     {
 
         $request->validate([
-            'category_name' => 'required|string|max:255',
+            'category_name' => 'required|string|max:255|min:3',
         ]);
 
         Category::create($request->all());
@@ -37,7 +37,7 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $request->validate([
-            'category_name' => 'required|string|max:255',
+            'category_name' => 'required|string|max:255|min:3',
         ]);
 
         $category->update([
