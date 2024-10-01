@@ -45,6 +45,10 @@ Route::middleware(['auth', 'verified', 'rolemanager:admin'])->group(function () 
         Route::controller(SubCategoryController::class)->group(function () {
             Route::get('/subcategory/index', 'index')->name('subcategory.index');
             Route::get('/subcategory/create', 'create')->name('subcategory.create');
+            Route::post('/subcategory/store', 'store')->name('subcategory.store');
+            Route::put('/subcategory/update/{subcategory}', 'update')->name('subcategory.update');
+            Route::get('/subcategory/edit/{subcategory}', 'edit')->name('subcategory.edit');
+            Route::delete('/subcategory/destroy/{subcategory}', 'destroy')->name('subcategory.destroy');
         });
 
         Route::controller(ProductAttributeController::class)->group(function () {
