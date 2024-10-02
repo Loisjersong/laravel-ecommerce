@@ -23,7 +23,7 @@
         </div>
 
         @foreach ($subcategories as $index => $subcategory)
-        <div class="grid grid-cols-4 border-b border-stroke dark:border-strokedark sm:grid-cols-4">
+        <div class="grid grid-cols-4 {{ $loop->last ? '' : 'border-b border-stroke dark:border-strokedark' }} sm:grid-cols-4">
             <div class="flex gap-3 p-2.5 xl:p-5">
                 <p class="hidden font-medium text-black dark:text-white sm:block">
                     {{ $index + 1 }}
